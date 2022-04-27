@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 300px;
+            height: 200px;
+            border-collapse: collapse;
+            margin: 100px auto;
+        }
+
+        thead tr {
+            background-color: #008DD0;
+        }
+
+        tbody tr {
+            background-color: #EEF1EE;
+        }
+
+        tbody tr:hover {
+            background-color: #FAFAFA;
+        }
+
+        th,
+        td {
+            border: 1px solid #DEDFDB;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.写样式 -->
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th>商品</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPhone8</td>
+                <td>8000</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPhone8</td>
+                <td>8000</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPhone8</td>
+                <td>8000</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPhone8</td>
+                <td>8000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // var flag = false;
+        var th_checkbox = document.querySelector('thead').querySelector('input');
+        var tb_checkboxs = document.querySelector('tbody').querySelectorAll('input');
+        th_checkbox.onclick = function () {
+            for (var i = 0; i < tb_checkboxs.length; i++) {
+                // if (th_checkbox.checked == true) {
+                //     tb_checkboxs[i].checked = true;
+                // } else {
+                //     tb_checkboxs[i].checked = false;
+                // }
+
+                tb_checkboxs[i].checked = th_checkbox.checked;
+            }
+        }
+
+        for (var i = 0; i < tb_checkboxs.length; i++) {
+            tb_checkboxs[i].onclick = function () {
+                th_checkbox.checked = true;
+                for (var i = 0; i < tb_checkboxs.length; i++) {
+                    if (tb_checkboxs[i].checked == false) {
+                        th_checkbox.checked = false;
+                        break;
+                    }
+                }
+                // th_checkbox.checked = true;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

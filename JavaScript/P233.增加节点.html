@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <li>nihao</li>
+        <p>123</p>
+    </div>
+    <script>
+        // 1.创建一个i元素并添加到div的最后面
+        var div = document.querySelector('div');
+        //创建一个i元素
+        var i = document.createElement('i');
+        //添加到divx\子元素的最后面
+        div.appendChild(i);
+
+        //2.创建一个em元素，将该元素添加到li与p中间
+
+        var em = document.createElement('em');
+        div.insertBefore(em, div.children[1])
+    </script>
+</body>
+
+</html>

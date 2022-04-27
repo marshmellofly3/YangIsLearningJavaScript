@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 100px;
+            height: 30px;
+            background-color: skyblue;
+            color: aliceblue;
+            border-radius: 15px;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+
+
+
+
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                for (var j = 0; j < btns.length; j++) {
+                    btns[j].style.backgroundColor = 'skyblue';
+                }
+                this.style.backgroundColor = 'pink';
+            }
+        }
+    </script>
+</body>
+
+</html>

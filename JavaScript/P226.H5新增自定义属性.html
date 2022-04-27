@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div data-index="1" data-yyt="20" data-yyx="6" data-list-name="12345">
+
+    </div>
+    <script>
+        var div = document.querySelector('div');
+
+        console.log(div.getAttribute('data-index'));
+        div.setAttribute('data-index', 9);
+        console.log(div.dataset.index);
+        console.log(div.dataset);
+        // console.log(div.yset);
+        console.log(div.dataset.yyx);
+        console.log(div.dataset['index']);
+        console.log(div.dataset['yyt']);
+        console.log(div.dataset.listName);
+    </script>
+</body>
+
+</html>

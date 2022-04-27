@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Microsoft YaHei';
+        }
+
+        textarea {
+            float: left;
+            width: 800px;
+            height: 150px;
+            border: 2px solid deeppink;
+            resize: none;
+            outline: none;
+            background-color: pink;
+            border-radius: 10px;
+            font: 18px/24px;
+            padding: 10px;
+        }
+
+        .post {
+            float: left;
+            width: 80px;
+            height: 40px;
+            border: 0;
+            background-color: deeppink;
+            color: #fff;
+            font-size: 18px;
+            letter-spacing: 3px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 65px;
+            margin-left: 30px;
+        }
+
+
+        .comment {
+            width: 600px;
+            background-color: skyblue;
+            margin-left: 100px;
+        }
+
+        li {
+            width: 300px;
+            font: 16px/30px;
+            background-color: pink;
+            color: #000;
+            border-radius: 4px;
+            list-style: none;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea></textarea>
+    <button class="post">发布</button>
+    <ul class="comment">
+
+    </ul>
+    <script>
+        var post = document.querySelector('.post');
+        var ul = document.querySelector('ul');
+        var t_a = document.querySelector('textarea');
+        post.onclick = function () {
+            if (t_a.value == '') {
+                alert('不能输入为空');
+            } else {
+                var li = document.createElement('li');
+                ul.insertBefore(li, ul.children[0])
+                li.innerHTML = t_a.value;
+            }
+        }
+    </script>
+</body>
+
+</html>

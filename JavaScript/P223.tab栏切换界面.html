@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab {
+            width: 800px;
+            height: 40px;
+            background-color: #F1F1F1;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .tab .tab_list li {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 30px 0 30px;
+            list-style: none;
+        }
+
+        .tab .tab_list li:hover {
+            cursor: pointer;
+        }
+
+        .tab .tab_con .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.写样式 -->
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（50000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div index="0" class="item" style="display:block;">商品介绍内容</div>
+            <div index="1" class="item">规格与包装内容</div>
+            <div index="2" class="item">售后保障内容</div>
+            <div index="3" class="item">商品评价（50000）内容</div>
+            <div index="4" class="item">手机社区内容</div>
+        </div>
+    </div>
+    <script>
+        var lis = document.querySelector('.tab').querySelectorAll('li');
+        var items = document.querySelector('.tab_con').querySelectorAll('.item')
+        for (var i = 0; i < lis.length; i++) {
+
+            //给tab-list中所有li一个index编号
+            lis[i].setAttribute('index', i);
+
+
+            lis[i].onclick = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].style.backgroundColor = '#F1F1F1';
+                    lis[i].style.color = '#000';
+                    lis[i].className = '';
+                    var index = this.getAttribute('index');
+                    console.log(index);
+
+                    for (var j = 0; j < items.length; j++) {
+                        items[j].style.display = 'none';
+                        items[index].style.display = 'block';
+                    }
+                }
+                this.style.backgroundColor = '#C81623';
+                this.style.color = '#fff';
+                this.className = 'current';
+            }
+        }
+    </script>
+</body>
+
+</html>

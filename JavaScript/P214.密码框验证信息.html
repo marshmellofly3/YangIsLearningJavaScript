@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F7FAF7;
+        }
+
+        i {
+            color: #f00;
+            font-size: 16px;
+            margin-right: 7px;
+        }
+
+        .pwd {
+            width: 180px;
+            height: 20px;
+            border: 1px solid #CCC;
+            border-radius: 2px;
+            outline: none;
+            font: 16px/20px;
+            box-shadow: 1px 1px 1px #EBEBEB inset;
+        }
+
+        .suggest {
+            display: inline-block;
+            width: 230px;
+            height: 70px;
+            color: #808080;
+            background-position: 0 10px;
+            background-repeat: no-repeat;
+            font: 12px/1.125 "Microsoft YaHei";
+            padding-left: 18px;
+            padding-top: 10px;
+            margin-left: 15px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.写样式 -->
+    <i>*</i>设置密码: <input type="password" class="pwd">
+    <!-- <span class="icon-suggest"></span> -->
+    <p class="suggest"></p>
+
+    <script>
+        var pwd = document.querySelector('.pwd');
+        var sgt = document.querySelector('.suggest');
+        pwd.onfocus = function () {
+            sgt.style.backgroundImage = 'url(images/mess.png)';
+            sgt.innerHTML = '6-16位字符(字母、数字、符号)，区分大小写';
+        }
+
+        pwd.onblur = function () {
+            if (pwd.value == '') {
+                sgt.style.backgroundImage = 'url(images/wrong.png)';
+                sgt.innerHTML = '请输入密码';
+            } else if (pwd.value.length <= 16 && pwd.value.length >= 6) {
+                sgt.style.backgroundImage = 'url(images/right.png)';
+                sgt.innerHTML = '';
+            } else if (pwd.value.length > 16) {
+                sgt.style.backgroundImage = 'url(images/wrong.png)';
+                sgt.innerHTML = '密码较长';
+            } else {
+                sgt.style.backgroundImage = 'url(images/wrong.png)';
+                sgt.innerHTML = '密码较短';
+            }
+        }
+    </script>
+</body>
+
+</html>

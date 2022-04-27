@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            width: 900px;
+            height: 250px;
+            border-collapse: collapse;
+            margin: 100px auto;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #ccc;
+        }
+
+        tbody td {
+            text-align: center;
+        }
+
+        thead tr {
+            background-color: #87CEEB;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1.写表格 -->
+    <table>
+        <thead>
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>最新净值</th>
+                <th>累计净值</th>
+                <th>前单位净值</th>
+                <th>净值增长率</th>
+                <th>公布日期</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+                <td>2019-01-11</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+                <td>2019-01-11</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+                <td>2019-01-11</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+                <td>2019-01-11</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+                <td>2019-01-11</td>
+            </tr>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+                <td>2019-01-11</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+
+        var tb_trs = document.querySelector('tbody').querySelectorAll('tr');
+        for (var i = 0; i < tb_trs.length; i++) {
+            tb_trs[i].onmouseover = function () {
+                this.style.backgroundColor = 'pink';
+            }
+            tb_trs[i].onmouseout = function () {
+                this.style.backgroundColor = '#fff';
+            }
+        }
+    </script>
+</body>
+
+</html>
